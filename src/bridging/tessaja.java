@@ -17,6 +17,8 @@ public class tessaja {
     }
     public static void main(String[] args) {
         tessaja();
+        BPJSCekNIK ck=new BPJSCekNIK();
+        ck.tampil("3271040907830028");
     }
     
 }

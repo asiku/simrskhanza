@@ -454,7 +454,7 @@ public final class DlgCariObat extends javax.swing.JDialog {
         label12.setPreferredSize(new java.awt.Dimension(50, 23));
         FormInput.add(label12);
 
-        Jenisjual.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Rawat Jalan", "Beli Luar", "Karyawan", "Utama/BPJS" }));
+        Jenisjual.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Rawat Jalan", "Karyawan" }));
         Jenisjual.setName("Jenisjual"); // NOI18N
         Jenisjual.setPreferredSize(new java.awt.Dimension(100, 23));
         Jenisjual.addItemListener(new java.awt.event.ItemListener() {
@@ -1097,14 +1097,14 @@ private void JenisjualKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             tabModeobat.addRow(new Object[] {false,"",rsobat.getString("kode_brng"),rsobat.getString("nama_brng"),
                                        rsobat.getString("kode_sat"),rsobat.getString("letak_barang"),rsobat.getDouble("ralan"),
                                        rsobat.getString("nama"),0,0,0,""});
-                        }else if(Jenisjual.getSelectedItem().equals("Beli Luar")){
-                            tabModeobat.addRow(new Object[] {false,"",rsobat.getString("kode_brng"),rsobat.getString("nama_brng"),
-                                       rsobat.getString("kode_sat"),rsobat.getString("letak_barang"),rsobat.getDouble("beliluar"),
-                                       rsobat.getString("nama"),0,0,0,""});
-                        }else if(Jenisjual.getSelectedItem().equals("Utama/BPJS")){
-                            tabModeobat.addRow(new Object[] {false,"",rsobat.getString("kode_brng"),rsobat.getString("nama_brng"),
-                                       rsobat.getString("kode_sat"),rsobat.getString("letak_barang"),rsobat.getDouble("utama"),
-                                       rsobat.getString("nama"),0,0,0,""});
+//                        }else if(Jenisjual.getSelectedItem().equals("Beli Luar")){
+//                            tabModeobat.addRow(new Object[] {false,"",rsobat.getString("kode_brng"),rsobat.getString("nama_brng"),
+//                                       rsobat.getString("kode_sat"),rsobat.getString("letak_barang"),rsobat.getDouble("beliluar"),
+//                                       rsobat.getString("nama"),0,0,0,""});
+//                        }else if(Jenisjual.getSelectedItem().equals("Utama/BPJS")){
+//                            tabModeobat.addRow(new Object[] {false,"",rsobat.getString("kode_brng"),rsobat.getString("nama_brng"),
+//                                       rsobat.getString("kode_sat"),rsobat.getString("letak_barang"),rsobat.getDouble("utama"),
+//                                       rsobat.getString("nama"),0,0,0,""});
                         }                 
                     }
                 }              

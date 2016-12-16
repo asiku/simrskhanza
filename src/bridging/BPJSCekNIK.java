@@ -58,7 +58,12 @@ public class BPJSCekNIK {
             }else if(nameNode.path("message").asText().equals("OK")){
                 JsonNode response = root.path("response");
                 nokartu=response.path("peserta").path("noKartu").asText();
+                
                 nama=response.path("peserta").path("nama").asText();
+                
+                System.out.println("no kartu:"+nokartu);
+                System.out.println("nama:"+nama);
+                
                 pekerjaan=response.path("peserta").path("jenisPeserta").path("nmJenisPeserta").asText();
                 tgl_lahir=response.path("peserta").path("tglLahir").asText();
                 jk=response.path("peserta").path("sex").asText().replaceAll("L","LAKI-LAKI").replaceAll("P","PEREMPUAN");

@@ -79,6 +79,17 @@ public class DlgBarang extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
+        //hide dulu soalnya ga ke pake
+        kelasvvip.setVisible(false);
+        label33.setVisible(false);
+        label35.setVisible(false);
+        label37.setVisible(false);
+        label36.setVisible(false);
+        jualbebas.setVisible(false);
+        beliluar.setVisible(false);
+        utama.setVisible(false);
+        
+        
         Object[] row = {
             "P", "Kode Barang", "Nama Barang", "Kode Satuan", "Nama Satuan", "Letak Barang",
             "Hrg.Beli(Rp)", "Ralan(Rp)", "Ranap K1(Rp)", "Ranap K2(Rp)", "Ranap K3(Rp)",
@@ -450,6 +461,8 @@ public class DlgBarang extends javax.swing.JDialog {
         KdIF = new widget.TextBox();
         NmIF = new widget.TextBox();
         BtnIF = new widget.Button();
+        label39 = new widget.Label();
+        Komposisi = new widget.TextBox();
         ChkInput = new widget.CekBox();
 
         Popup.setName("Popup"); // NOI18N
@@ -947,7 +960,7 @@ public class DlgBarang extends javax.swing.JDialog {
         label14.setName("label14"); // NOI18N
         label14.setPreferredSize(new java.awt.Dimension(85, 23));
         FormInput.add(label14);
-        label14.setBounds(505, 162, 135, 23);
+        label14.setBounds(500, 160, 135, 23);
 
         stok_minimal.setHighlighter(null);
         stok_minimal.setName("stok_minimal"); // NOI18N
@@ -968,7 +981,7 @@ public class DlgBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(stok_minimal);
-        stok_minimal.setBounds(644, 162, 100, 23);
+        stok_minimal.setBounds(640, 160, 110, 23);
 
         label20.setText("Jenis Barang :");
         label20.setName("label20"); // NOI18N
@@ -1059,6 +1072,13 @@ public class DlgBarang extends javax.swing.JDialog {
                 kelas3MouseExited(evt);
             }
         });
+        kelas3.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                kelas3CaretPositionChanged(evt);
+            }
+        });
         kelas3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 kelas3KeyPressed(evt);
@@ -1077,7 +1097,7 @@ public class DlgBarang extends javax.swing.JDialog {
         label33.setName("label33"); // NOI18N
         label33.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label33);
-        label33.setBounds(210, 222, 160, 23);
+        label33.setBounds(540, 220, 160, 23);
 
         utama.setName("utama"); // NOI18N
         utama.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1097,7 +1117,7 @@ public class DlgBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(utama);
-        utama.setBounds(370, 222, 110, 23);
+        utama.setBounds(650, 220, 110, 23);
 
         kelasvip.setName("kelasvip"); // NOI18N
         kelasvip.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1117,19 +1137,19 @@ public class DlgBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(kelasvip);
-        kelasvip.setBounds(660, 12, 110, 23);
+        kelasvip.setBounds(370, 220, 110, 23);
 
         label34.setText("Hrg Rnp Kelas VIP : Rp.");
         label34.setName("label34"); // NOI18N
         label34.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label34);
-        label34.setBounds(500, 12, 160, 23);
+        label34.setBounds(250, 220, 120, 23);
 
         label35.setText("Hrg Rnp Kelas VVIP : Rp.");
         label35.setName("label35"); // NOI18N
         label35.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label35);
-        label35.setBounds(500, 42, 160, 23);
+        label35.setBounds(560, 220, 160, 23);
 
         kelasvvip.setName("kelasvvip"); // NOI18N
         kelasvvip.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1149,13 +1169,13 @@ public class DlgBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(kelasvvip);
-        kelasvvip.setBounds(660, 42, 110, 23);
+        kelasvvip.setBounds(580, 220, 110, 23);
 
         label36.setText("Hrg Jika Beli dari Apotek Lain : Rp.");
         label36.setName("label36"); // NOI18N
         label36.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label36);
-        label36.setBounds(470, 72, 190, 23);
+        label36.setBounds(530, 220, 140, 23);
 
         beliluar.setName("beliluar"); // NOI18N
         beliluar.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1175,7 +1195,7 @@ public class DlgBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(beliluar);
-        beliluar.setBounds(660, 72, 110, 23);
+        beliluar.setBounds(530, 220, 110, 23);
 
         jualbebas.setName("jualbebas"); // NOI18N
         jualbebas.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1195,19 +1215,19 @@ public class DlgBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(jualbebas);
-        jualbebas.setBounds(660, 102, 110, 23);
+        jualbebas.setBounds(650, 220, 110, 23);
 
         label37.setText("Hrg Jual Obat Bebas : Rp.");
         label37.setName("label37"); // NOI18N
         label37.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label37);
-        label37.setBounds(470, 102, 190, 23);
+        label37.setBounds(500, 220, 190, 23);
 
         label38.setText("Hrg Karyawan : Rp.");
         label38.setName("label38"); // NOI18N
         label38.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label38);
-        label38.setBounds(470, 132, 190, 23);
+        label38.setBounds(540, 130, 100, 23);
 
         karyawan.setName("karyawan"); // NOI18N
         karyawan.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1221,17 +1241,22 @@ public class DlgBarang extends javax.swing.JDialog {
                 karyawanMouseExited(evt);
             }
         });
+        karyawan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                karyawanActionPerformed(evt);
+            }
+        });
         karyawan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 karyawanKeyPressed(evt);
             }
         });
         FormInput.add(karyawan);
-        karyawan.setBounds(660, 132, 110, 23);
+        karyawan.setBounds(640, 130, 110, 23);
 
         DTPExpired.setEditable(false);
         DTPExpired.setForeground(new java.awt.Color(50, 70, 50));
-        DTPExpired.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-09-2016" }));
+        DTPExpired.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-11-2016" }));
         DTPExpired.setDisplayFormat("dd-MM-yyyy");
         DTPExpired.setName("DTPExpired"); // NOI18N
         DTPExpired.setOpaque(false);
@@ -1291,6 +1316,37 @@ public class DlgBarang extends javax.swing.JDialog {
         });
         FormInput.add(BtnIF);
         BtnIF.setBounds(455, 12, 25, 23);
+
+        label39.setText("Komposisi : ");
+        label39.setName("label39"); // NOI18N
+        label39.setPreferredSize(new java.awt.Dimension(65, 23));
+        FormInput.add(label39);
+        label39.setBounds(540, 100, 100, 23);
+
+        Komposisi.setName("Komposisi"); // NOI18N
+        Komposisi.setPreferredSize(new java.awt.Dimension(207, 23));
+        Komposisi.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                KomposisiMouseMoved(evt);
+            }
+        });
+        Komposisi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                KomposisiMouseExited(evt);
+            }
+        });
+        Komposisi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KomposisiActionPerformed(evt);
+            }
+        });
+        Komposisi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KomposisiKeyPressed(evt);
+            }
+        });
+        FormInput.add(Komposisi);
+        Komposisi.setBounds(640, 100, 160, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1555,16 +1611,16 @@ public class DlgBarang extends javax.swing.JDialog {
             Valid.textKosong(kelas2, "Harga Ranap Kelas 2");
         } else if (kelas3.getText().trim().equals("")) {
             Valid.textKosong(kelas3, "Harga Ranap Kelas 3");
-        } else if (utama.getText().trim().equals("")) {
-            Valid.textKosong(utama, "Harga Ranap Kelas Utama");
+//        } else if (utama.getText().trim().equals("")) {
+//            Valid.textKosong(utama, "Harga Ranap Kelas Utama");
         } else if (kelasvip.getText().trim().equals("")) {
             Valid.textKosong(kelasvip, "Harga Ranap Kelas VIP");
-        } else if (kelasvvip.getText().trim().equals("")) {
-            Valid.textKosong(kelasvvip, "Harga Ranap Kelas VVIP");
-        } else if (beliluar.getText().trim().equals("")) {
-            Valid.textKosong(beliluar, "Harga Jika Beli dari Apotek Lain");
-        } else if (jualbebas.getText().trim().equals("")) {
-            Valid.textKosong(jualbebas, "Harga Jual Obat Bebas");
+//        } else if (kelasvvip.getText().trim().equals("")) {
+//            Valid.textKosong(kelasvvip, "Harga Ranap Kelas VVIP");
+//        } else if (beliluar.getText().trim().equals("")) {
+//            Valid.textKosong(beliluar, "Harga Jika Beli dari Apotek Lain");
+//        } else if (jualbebas.getText().trim().equals("")) {
+//            Valid.textKosong(jualbebas, "Harga Jual Obat Bebas");
         } else if (karyawan.getText().trim().equals("")) {
             Valid.textKosong(karyawan, "Harga Karyawan");
         } else if (kdsat.getText().trim().equals("") || nmsat.getText().trim().equals("")) {
@@ -1583,12 +1639,20 @@ public class DlgBarang extends javax.swing.JDialog {
             } else {
                 tanggal = "0000-00-00";
             }
-            Sequel.menyimpan("databarang", "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?", "Kode Barang", 21, new String[]{
+//            Sequel.menyimpan("databarang", "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?", "Kode Barang", 21, new String[]{
+//                Kd.getText(), Nm.getText(), kdsat.getText(), Letak.getText(), beli.getText(), ralan.getText().replaceAll(",", ""),
+//                kelas1.getText().replaceAll(",", ""), kelas2.getText().replaceAll(",", ""), kelas3.getText().replaceAll(",", ""),
+//                utama.getText().replaceAll(",", ""), kelasvip.getText().replaceAll(",", ""), kelasvvip.getText().replaceAll(",", ""),
+//                beliluar.getText().replaceAll(",", ""), jualbebas.getText().replaceAll(",", ""), karyawan.getText().replaceAll(",", ""),
+//                stok_minimal.getText(), kdjns.getText(), Kapasitas.getText(), tanggal,"1",KdIF.getText()
+//                    
+             Sequel.menyimpan("databarang", "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?", "Kode Barang", 21, new String[]{
                 Kd.getText(), Nm.getText(), kdsat.getText(), Letak.getText(), beli.getText(), ralan.getText().replaceAll(",", ""),
                 kelas1.getText().replaceAll(",", ""), kelas2.getText().replaceAll(",", ""), kelas3.getText().replaceAll(",", ""),
                 utama.getText().replaceAll(",", ""), kelasvip.getText().replaceAll(",", ""), kelasvvip.getText().replaceAll(",", ""),
                 beliluar.getText().replaceAll(",", ""), jualbebas.getText().replaceAll(",", ""), karyawan.getText().replaceAll(",", ""),
-                stok_minimal.getText(), kdjns.getText(), Kapasitas.getText(), tanggal,"1",KdIF.getText()
+                stok_minimal.getText(), kdjns.getText(), Kapasitas.getText(), tanggal,"1",KdIF.getText()        
+                    
             });
             tampil();
             emptTeks();
@@ -1846,7 +1910,8 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     }//GEN-LAST:event_kelas3MouseExited
 
     private void kelas3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kelas3KeyPressed
-        Valid.pindah(evt, kelas2, utama);
+       // Valid.pindah(evt, kelas2, utama);
+       Valid.pindah(evt, kelas2,kelasvip );
     }//GEN-LAST:event_kelas3KeyPressed
 
     private void utamaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_utamaMouseMoved
@@ -1878,7 +1943,9 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     }//GEN-LAST:event_kelasvipMouseExited
 
     private void kelasvipKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kelasvipKeyPressed
-        Valid.pindah(evt, utama, kelasvvip);
+        //Valid.pindah(evt, utama, kelasvvip);
+        Valid.pindah(evt, kelas3, karyawan);
+        
     }//GEN-LAST:event_kelasvipKeyPressed
 
     private void kelasvvipMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kelasvvipMouseMoved
@@ -1942,7 +2009,8 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     }//GEN-LAST:event_karyawanMouseExited
 
     private void karyawanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_karyawanKeyPressed
-        Valid.pindah(evt, jualbebas, stok_minimal);
+        //Valid.pindah(evt, jualbebas, stok_minimal);
+         Valid.pindah(evt, kelasvip, stok_minimal);
     }//GEN-LAST:event_karyawanKeyPressed
 
     private void DTPExpiredKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTPExpiredKeyPressed
@@ -1979,6 +2047,30 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         industri.setVisible(true);
     }//GEN-LAST:event_BtnIFActionPerformed
 
+    private void kelas3CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_kelas3CaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kelas3CaretPositionChanged
+
+    private void karyawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_karyawanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_karyawanActionPerformed
+
+    private void KomposisiMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KomposisiMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KomposisiMouseMoved
+
+    private void KomposisiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KomposisiMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KomposisiMouseExited
+
+    private void KomposisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KomposisiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KomposisiActionPerformed
+
+    private void KomposisiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KomposisiKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KomposisiKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -2014,6 +2106,7 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.TextBox Kapasitas;
     private widget.TextBox Kd;
     private widget.TextBox KdIF;
+    private widget.TextBox Komposisi;
     private widget.Label LCount;
     private widget.TextBox Letak;
     private javax.swing.JMenuItem MnRestore;
@@ -2055,6 +2148,7 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.Label label36;
     private widget.Label label37;
     private widget.Label label38;
+    private widget.Label label39;
     private widget.Label label9;
     private widget.TextBox nmjns;
     private widget.TextBox nmsat;
